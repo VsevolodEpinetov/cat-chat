@@ -1,0 +1,22 @@
+.form {
+    padding: 15px;
+    background-color: #f9d972;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+}
+
+.input {
+    padding: 15px 45px 15px 15px;
+    border-radius: 22.5px 0 0 22.5px;
+    border: 2px solid #f59e0b;
+    flex-grow: 1;
+}
+
+.button {
+    background-color: #f59e0b;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+    font-weight: 600;
+}

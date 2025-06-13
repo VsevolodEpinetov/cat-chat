@@ -1,0 +1,57 @@
+.wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+    max-width: 50%;
+}
+
+@media (max-width: 750px) {
+    .wrapper {
+        max-width: 90%;
+    }
+}
+
+.wrapper--mine {
+    flex-direction: row-reverse;
+    align-self: flex-end;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 3px solid white;
+    box-shadow: 9px 10px 67px -16px rgba(0,0,0,0.75);
+}
+
+.body {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2px;
+    background-color: #fef3c7;
+    color: black;
+    padding: 15px;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.05);
+    border-radius: 0 10px 10px 10px;
+}
+
+.name {
+    font-weight: 700;
+    color: #78350f;
+}
+
+.name, .message {
+    margin: 0;
+    padding: 0;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.timestamp {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
