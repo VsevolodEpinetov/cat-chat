@@ -92,11 +92,11 @@ const SOCIALS = [
   },
   {
     name: "Personal Website",
-    link: "http://epinetov.com",
+    link: "https://epinetov.com",
   },
   {
     name: "Telegram",
-    link: "t.me/send_dog_pics",
+    link: "https://t.me/send_dog_pics",
   },
 ];
 
