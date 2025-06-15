@@ -1,3 +1,20 @@
+.header-wrapper {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    background: linear-gradient(90deg, #FAD0C9, #FFD5EC);
+    border-radius: 0 0 15px 15px;
+    color: #443333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-wrapper--rect {
+    border-radius: 0;
+}
+
 .avatar {
     width: 50px;
     height: 50px;
@@ -6,13 +23,38 @@
     margin-right: 15px;
 }
 
-.header-wrapper {
+.img-wrapper {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.img-wrapper::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    display: block;
     width: 100%;
-    padding: 20px;
-    display: flex;
-    background-color: #fcd34d;
-    border-radius: 0 0 15px 15px;
-    color: #78350f;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 250ms ease;
+}
+
+.img-wrapper:hover::after {
+    opacity: 0.2;
+}
+
+.header-info {
+    margin-left: 10px;
+}
+
+.main-info {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -20,11 +62,48 @@
 
 .name {
     margin: 0;
+    margin-bottom: 5px;
     padding: 0;
     font-weight: 600;
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: #AA8899;
 }
 
 .status {
     margin: 0;
+    margin-left: 15px;
     padding: 0;
+    position: relative;
+}
+
+.status::after,
+.status::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(34, 165, 34);
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+}
+
+.status::before {
+    width: 16px;
+    height: 16px;
+    opacity: 0.3;
+    left: -18px;
+    transform-origin: center center;
+    animation: pulse 2s infinite;
+    animation-timing-function: easeOutBounce;
+}
+
+@keyframes pulse {
+    0% {transform: translateY(-50%) scale(0.9);}
+    50% {transform: translateY(-50%) scale(1.2);}
+    100% {transform: translateY(-50%) scale(0.9);}
 }

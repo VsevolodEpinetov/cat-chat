@@ -6,7 +6,7 @@ import { UserContext } from "../../contexts/user";
 
 const Chat = ({ messages }: { messages: ChatMessage[] }) => {
   const chatRef = useRef<HTMLDivElement | null>(null);
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     chatRef.current?.scrollTo({

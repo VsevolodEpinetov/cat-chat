@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import styles from "./MessageInput.module.css";
 import { UserContext } from "../../contexts/user";
+import { SOCIALS } from "../../settings";
 
 function MessageInput({
   socketRef,
@@ -8,14 +9,14 @@ function MessageInput({
   socketRef: React.RefObject<WebSocket | null>;
 }) {
   const [message, setMessage] = useState<string>("");
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const author = {
       id: user.id,
-      name: "Whiskers McFluffy",
-      avatarId: 1,
+      name: user.name,
+      avatarId: user.avatarId,
     };
     const data = {
       author,
@@ -31,18 +32,38 @@ function MessageInput({
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="message"
-        id="message"
-        className={styles.input}
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        autoComplete={"off"}
-      />
-      <input type="submit" value="Send meow" className={styles.button} />
-    </form>
+    <div className={styles.wrapper}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="message"
+          id="message"
+          className={styles.input}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          autoComplete={"off"}
+          placeholder="Tell the cats about your day! Don't worry, everything is autotranslated"
+        />
+        <input type="submit" value="Send meow" className={styles.button} />
+      </form>
+      <ul className={styles.socials}>
+        {SOCIALS.map((but, id) => {
+          return (
+            <li>
+              <a
+                className={styles.link}
+                key={`socialbutton-${id}`}
+                href={but.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {but.name}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 

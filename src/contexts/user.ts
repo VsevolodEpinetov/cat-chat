@@ -1,5 +1,8 @@
 import { createContext } from "react";
-import { Author } from "../types";
+import { UserContextType } from "../types";
 import { DefaultSettings } from "../settings";
 
-export const UserContext = createContext<Author>(DefaultSettings.User);
+export const UserContext = createContext<UserContextType>({
+  user: DefaultSettings.User,
+  setUser: () => {},
+});

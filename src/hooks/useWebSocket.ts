@@ -48,7 +48,7 @@ function useWebSocket(wsAdress: string) {
     };
   }, [wsAdress]);
 
-  return { messages, stats, user, socketRef };
+  return { messages, stats, user, socketRef, setUser };
 }
 
 export default useWebSocket;
