@@ -100,7 +100,7 @@ const SOCIALS = [
   },
 ];
 
-const WS_ADDRESS = "ws://5.75.243.158:3001";
+const WS_ADDRESS = "wss://chat.epinetov.com/ws/";
 const MAX_MESSAGES = 50;
 
 const MAX_AVATAR_ID = 10;

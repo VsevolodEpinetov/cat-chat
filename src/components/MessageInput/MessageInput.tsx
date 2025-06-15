@@ -49,10 +49,9 @@ function MessageInput({
       <ul className={styles.socials}>
         {SOCIALS.map((but, id) => {
           return (
-            <li>
+            <li key={`socialbutton-${id}`}>
               <a
                 className={styles.link}
-                key={`socialbutton-${id}`}
                 href={but.link}
                 target="_blank"
                 rel="noreferrer"
