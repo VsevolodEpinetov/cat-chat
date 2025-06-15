@@ -1,36 +1,33 @@
-import { forwardRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import Message from "../Message/Message";
 import styles from "./Chat.module.css";
+import { ChatMessage } from "../../types";
+import { UserContext } from "../../contexts/user";
 
-interface Author {
-  name: string;
-  id: string;
-  avatarId: number;
-}
+const Chat = ({ messages }: { messages: ChatMessage[] }) => {
+  const chatRef = useRef<HTMLDivElement | null>(null);
+  const user = useContext(UserContext);
 
-interface ChatMessage {
-  author: Author;
-  text: string;
-  timestamp: number;
-}
+  useEffect(() => {
+    chatRef.current?.scrollTo({
+      top: chatRef.current?.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [messages]);
 
-const Chat = forwardRef<
-  HTMLDivElement,
-  { messages: ChatMessage[]; clientId: string }
->((props, ref) => {
   return (
-    <div ref={ref} className={styles.wrapper}>
-      {props.messages.map((mes, mesId) => (
+    <div ref={chatRef} className={styles.wrapper}>
+      {messages.map((mes, mesId) => (
         <Message
           key={`message-${mesId}`}
           text={mes.text}
           author={mes.author}
           timestamp={mes.timestamp}
-          isMine={props.clientId === mes.author.id}
+          isMine={user.id === mes.author.id}
         />
       ))}
     </div>
   );
-});
+};
 
 export default Chat;
