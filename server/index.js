@@ -3,8 +3,6 @@ const WebSocket = require('ws');
 const settings = require('./settings');
 
 const server = http.createServer();
-
-// === 2. WebSocket сервер поверх HTTPS ===
 const wss = new WebSocket.Server({ server });
 
 // Store all connected clients

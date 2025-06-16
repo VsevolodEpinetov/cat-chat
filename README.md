@@ -1,46 +1,102 @@
-# Getting Started with Create React App
+# 🐾 MeowChat — The Cutest Cat Messenger on the Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="https://chat.epinetov.com/">
+    <img src="https://img.shields.io/badge/live-demo-green?style=for-the-badge" alt="Live Demo" />
+  </a>
+  <a href="https://github.com/VsevolodEpinetov/meowchat">
+    <img src="https://img.shields.io/github/last-commit/VsevolodEpinetov/cat-chat?style=for-the-badge" alt="Last Commit" />
+  </a>
+  <img src="https://img.shields.io/github/languages/top/VsevolodEpinetov/cat-chat?style=for-the-badge" alt="Top Language" />
+  <img src="https://img.shields.io/badge/made%20with-love-%23ff69b4?style=for-the-badge" alt="Made with Love" />
+</p>
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A lightweight React + WebSocket project that lets you anonymously chat with cats. Your message gets automatically "translated" into cat language — for fun, relief, and fur therapy.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 🎯 Real-time chat using `WebSocket`
+- 🐱 Automatic translation to “cat language” (meow-ified messages)
+- 🧠 Cute AI bots simulate playful conversation
+- 🎨 Pastel UI with fun facts and playful animations
+- 📊 Live user/bot count updates
+- 🌐 International naming logic (e.g. *Sirfluff von Muffinwhiskers*)
+- 💅 Responsive design & delightful UX touches
+- 🔐 HTTPS + WSS, Nginx proxy + Let's Encrypt setup
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Frontend        | Backend        | DevOps            |
+|----------------|----------------|-------------------|
+| React           | Node.js (WS)   | Nginx (SSL Proxy) |
+| TypeScript      | WebSocket      | Let's Encrypt     |
+| CSS Modules    | Express-style  |  |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🚀 Local Development
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 1. Clone & Install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/VsevolodEpinetov/cat-chat.git
+cd cat-chat
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 2. Start Frontend
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm run start
+```
 
-## Learn More
+### 3. Start Secure WebSocket Server
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd server
+node index.js
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## 🐾 Production Notes
+
+- Uses Certbot to manage SSL.
+- Nginx reverse proxy handles routing `/ws` to backend.
+
+---
+
+🧩 Customization
+- Add your own facts in FACTS[]
+- Modify avatar assets in /public/avatars (Don't forget to change maxAvatarId in settings)
+
+___
+
+## 🤝 About Me
+
+I'm a developer who loves blending **technical rigor** with **playful UX**.  
+This project was a weekend experiment to:
+- Practice full-stack deployment (WSS, Nginx, HTTPS)
+- Explore WebSocket-based UX patterns
+- Build something *silly but beautiful*
+
+My contacts:
+
+| Platform | Link |
+|---------|------|
+| Email | [vsevolod@epinetov.com](mailto:vsevolod@epinetov.com) |
+| LinkedIn | [linkedin.com/in/vsevolod-epinetov](https://www.linkedin.com/in/vsevolod-epinetov/) |
+| GitHub | [@VsevolodEpinetov](https://github.com/VsevolodEpinetov) |
+| Telegram | [@send_dog_pics](https://t.me/send_dog_pics) |
+
+---
+
+> “Sometimes all you need is a cat that understands… even if it just says meow.”  
+> — Anonymous Internet Human
